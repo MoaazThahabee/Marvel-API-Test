@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class CharactersListViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
