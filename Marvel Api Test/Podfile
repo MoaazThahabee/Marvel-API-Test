@@ -9,4 +9,6 @@ pod 'Alamofire'
 pod 'AlamofireObjectMapper', '~> 5.2'
 pod 'Kingfisher', '~> 5.0'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'ReachabilitySwift'
+pod 'ObjectMapperAdditions/Core'
 end
