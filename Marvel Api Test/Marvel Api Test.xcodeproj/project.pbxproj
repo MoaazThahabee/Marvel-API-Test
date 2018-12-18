@@ -37,6 +37,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3515B56021C99E890046858A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3515B56121C99E890046858A /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3515B56221C99E890046858A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3515B56321C99E890046858A /* Entity */,
+				3515B56421C99E890046858A /* Manager */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3515B56321C99E890046858A /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3515B56421C99E890046858A /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		3515B56521C99E890046858A /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
 		35A2158721C712070082A942 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +100,10 @@
 		35A2159221C712070082A942 /* Marvel Api Test */ = {
 			isa = PBXGroup;
 			children = (
+				3515B56521C99E890046858A /* External */,
+				3515B56221C99E890046858A /* Model */,
+				3515B56021C99E890046858A /* View */,
+				3515B56121C99E890046858A /* ViewController */,
 				35A2159321C712070082A942 /* AppDelegate.swift */,
 				35A2159521C712070082A942 /* MasterViewController.swift */,
 				35A2159721C712070082A942 /* DetailViewController.swift */,
