@@ -14,6 +14,12 @@ class Thumbnail: BaseEntity {
     var path: String?
     var extention: String?
     
+    var imagePath: String {
+        get {
+            return (self.path ?? "") + "." + (self.extention ?? "")
+        }
+    }
+    
     required init?(map: Map) {
         super.init(map: map)
     }
