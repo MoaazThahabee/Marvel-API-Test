@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Marvel Api Test
+
+  Created by Moaaz Al-Thahabee on 12/19/18.
+  Copyright © 2018 Moaaz Al-Thahabee. All rights reserved.
+*/
+"InternetDisconnected" = "Internet connection available";
+"InternetDisconnectedMessage" = "Internet connection not available";
+"InternetReachableViaWWAN" = "Internet connection available via Wifi";
+"InternetReachableViaWWANMessage" = "Internet connection available via mobile data";
+"Ok" = "Ok";
+"ConnectionProblem" = "Failed to communicate with remote server";
