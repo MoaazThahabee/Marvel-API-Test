@@ -20,12 +20,28 @@ class APIManager: BaseManager {
     static private let publicAPIKey = "09efb4bc48a97b9c2a73360d502e33ef"
     static private let privateAPIKey = "e5ec69a06545d698abbd0dde88146145714afeca"
     
-    enum APIEndpoint: String {
-        case characters = "characters"
+    enum APIEndpoint {
+        case characters
+        case comics(characterId: Int)
+        case series(characterId: Int)
+        case events(characterId: Int)
+        case stories(characterId: Int)
         func url() -> String {
-            return APIManager.baseURL + APIManager.apiURL + self.rawValue
+            switch self {
+            case .characters:
+                return APIManager.baseURL + APIManager.apiURL + "characters"
+            case .comics(let characterId):
+                return APIManager.baseURL + APIManager.apiURL + "characters/\(characterId)/" + "comics"
+            case .series(let characterId):
+                return APIManager.baseURL + APIManager.apiURL + "characters/\(characterId)/" + "series"
+            case .events(let characterId):
+                return APIManager.baseURL + APIManager.apiURL + "characters/\(characterId)/" + "events"
+            case .stories(let characterId):
+                return APIManager.baseURL + APIManager.apiURL + "characters/\(characterId)/" + "stories"
+            }
         }
     }
+    
     enum APIParameterName: String {
         case apiKey = "apikey"
         case hash = "hash"
@@ -47,6 +63,102 @@ class APIManager: BaseManager {
         
         NetworkManager.shared.get(url: APIEndpoint.characters.url(), parameters: parameters, headers: nil, success: { (response) in
             let response = Mapper<ResponseDataArray<Character>>().map(JSON: response)
+            if let response = response, response.statusCode == 200 {
+                success(response.data!)
+            }
+            else {
+                failure(response?.message ?? NSLocalizedString("ConnectionProblem", comment: ""))
+            }
+        }) { (error) in
+            failure(self.getServerErrorMessage(error: error))
+        }
+    }
+    
+    func comics(characterId: Int, offset: Int = 0, limit: Int = 20, success: @escaping (ArrayDataContainer<Comic>)-> (), failure: @escaping (String)-> ()) {
+        let timestamp = Date().timeIntervalSince1970.description
+        
+        let parameters: [String : Any] = [
+            APIParameterName.apiKey.rawValue: APIManager.publicAPIKey,
+            APIParameterName.timestamp.rawValue: timestamp,
+            APIParameterName.hash.rawValue: createHash(string: timestamp),
+            APIParameterName.offset.rawValue: offset,
+            APIParameterName.limit.rawValue: limit
+        ]
+        
+        NetworkManager.shared.get(url: APIEndpoint.comics(characterId: characterId).url(), parameters: parameters, headers: nil, success: { (response) in
+            let response = Mapper<ResponseDataArray<Comic>>().map(JSON: response)
+            if let response = response, response.statusCode == 200 {
+                success(response.data!)
+            }
+            else {
+                failure(response?.message ?? NSLocalizedString("ConnectionProblem", comment: ""))
+            }
+        }) { (error) in
+            failure(self.getServerErrorMessage(error: error))
+        }
+    }
+    
+    func events(characterId: Int, offset: Int = 0, limit: Int = 20, success: @escaping (ArrayDataContainer<Event>)-> (), failure: @escaping (String)-> ()) {
+        let timestamp = Date().timeIntervalSince1970.description
+        
+        let parameters: [String : Any] = [
+            APIParameterName.apiKey.rawValue: APIManager.publicAPIKey,
+            APIParameterName.timestamp.rawValue: timestamp,
+            APIParameterName.hash.rawValue: createHash(string: timestamp),
+            APIParameterName.offset.rawValue: offset,
+            APIParameterName.limit.rawValue: limit
+        ]
+        
+        NetworkManager.shared.get(url: APIEndpoint.events(characterId: characterId).url(), parameters: parameters, headers: nil, success: { (response) in
+            let response = Mapper<ResponseDataArray<Event>>().map(JSON: response)
+            if let response = response, response.statusCode == 200 {
+                success(response.data!)
+            }
+            else {
+                failure(response?.message ?? NSLocalizedString("ConnectionProblem", comment: ""))
+            }
+        }) { (error) in
+            failure(self.getServerErrorMessage(error: error))
+        }
+    }
+    
+    func stories(characterId: Int, offset: Int = 0, limit: Int = 20, success: @escaping (ArrayDataContainer<Story>)-> (), failure: @escaping (String)-> ()) {
+        let timestamp = Date().timeIntervalSince1970.description
+        
+        let parameters: [String : Any] = [
+            APIParameterName.apiKey.rawValue: APIManager.publicAPIKey,
+            APIParameterName.timestamp.rawValue: timestamp,
+            APIParameterName.hash.rawValue: createHash(string: timestamp),
+            APIParameterName.offset.rawValue: offset,
+            APIParameterName.limit.rawValue: limit
+        ]
+        
+        NetworkManager.shared.get(url: APIEndpoint.stories(characterId: characterId).url(), parameters: parameters, headers: nil, success: { (response) in
+            let response = Mapper<ResponseDataArray<Story>>().map(JSON: response)
+            if let response = response, response.statusCode == 200 {
+                success(response.data!)
+            }
+            else {
+                failure(response?.message ?? NSLocalizedString("ConnectionProblem", comment: ""))
+            }
+        }) { (error) in
+            failure(self.getServerErrorMessage(error: error))
+        }
+    }
+    
+    func series(characterId: Int, offset: Int = 0, limit: Int = 20, success: @escaping (ArrayDataContainer<Series>)-> (), failure: @escaping (String)-> ()) {
+        let timestamp = Date().timeIntervalSince1970.description
+        
+        let parameters: [String : Any] = [
+            APIParameterName.apiKey.rawValue: APIManager.publicAPIKey,
+            APIParameterName.timestamp.rawValue: timestamp,
+            APIParameterName.hash.rawValue: createHash(string: timestamp),
+            APIParameterName.offset.rawValue: offset,
+            APIParameterName.limit.rawValue: limit
+        ]
+        
+        NetworkManager.shared.get(url: APIEndpoint.series(characterId: characterId).url(), parameters: parameters, headers: nil, success: { (response) in
+            let response = Mapper<ResponseDataArray<Series>>().map(JSON: response)
             if let response = response, response.statusCode == 200 {
                 success(response.data!)
             }
