@@ -38,7 +38,7 @@ class CharacterDetailsViewController: UIViewController {
         
         self.workItemsTableView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         
-        self.navigationItem.title = character?.name
+        self.navigationItem.title = "(\(character!.id!))\(character!.name!)"
         
         self.workItemsTableView.register(UINib(nibName: workItemsListTableViewCellIdentifier, bundle: nil), forCellReuseIdentifier: workItemsListTableViewCellIdentifier)
         
