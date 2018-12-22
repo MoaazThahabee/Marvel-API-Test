@@ -5,9 +5,9 @@
   Created by Moaaz Al-Thahabee on 12/19/18.
   Copyright © 2018 Moaaz Al-Thahabee. All rights reserved.
 */
-"InternetDisconnected" = "Internet connection available";
+"InternetDisconnected" = "No internet access";
 "InternetDisconnectedMessage" = "Internet connection not available";
-"InternetReachableViaWWAN" = "Internet connection available via Wifi";
-"InternetReachableViaWWANMessage" = "Internet connection available via mobile data";
+"InternetReachableViaWWAN" = "Internet accessible";
+"InternetReachableViaWWANMessage" = "Internet connection accessible via mobile data";
 "Ok" = "Ok";
 "ConnectionProblem" = "Failed to communicate with remote server";
