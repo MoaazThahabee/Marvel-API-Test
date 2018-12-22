@@ -12,7 +12,9 @@ import ObjectMapper
 
 class WorkItem: BaseEntity {
     var name: String?
+    var title: String?
     var resourceURI: String?
+    var thumbnail: Thumbnail?
     
     required init?(map: Map) {
         super.init(map: map)
@@ -22,6 +24,8 @@ class WorkItem: BaseEntity {
         super.mapping(map: map)
         
         name <- (map["name"], StringTransform())
+        title <- (map["title"], StringTransform())
         resourceURI <- (map["resourceURI"], StringTransform())
+        thumbnail <- map["thumbnail"]
     }
 }
