@@ -33,6 +33,8 @@
 		35C4EDF421CB24940083B3B8 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4EDEF21CB24940083B3B8 /* NetworkManager.swift */; };
 		35C4EDFF21CB2B2D0083B3B8 /* CharactersListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C4EDFD21CB2B2D0083B3B8 /* CharactersListTableViewCell.xib */; };
 		35C4EE0021CB2B2D0083B3B8 /* CharactersListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4EDFE21CB2B2D0083B3B8 /* CharactersListTableViewCell.swift */; };
+		35C4EE0821CC573F0083B3B8 /* WorkItemsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C4EE0621CC573F0083B3B8 /* WorkItemsListTableViewCell.swift */; };
+		35C4EE0921CC573F0083B3B8 /* WorkItemsListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C4EE0721CC573F0083B3B8 /* WorkItemsListTableViewCell.xib */; };
 		5F1523B73A73443FCC62986D /* Pods_Marvel_Api_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A049500EE21223AEA4D14A2 /* Pods_Marvel_Api_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		35C4EDEF21CB24940083B3B8 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		35C4EDFD21CB2B2D0083B3B8 /* CharactersListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CharactersListTableViewCell.xib; sourceTree = "<group>"; };
 		35C4EDFE21CB2B2D0083B3B8 /* CharactersListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersListTableViewCell.swift; sourceTree = "<group>"; };
+		35C4EE0621CC573F0083B3B8 /* WorkItemsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkItemsListTableViewCell.swift; sourceTree = "<group>"; };
+		35C4EE0721CC573F0083B3B8 /* WorkItemsListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkItemsListTableViewCell.xib; sourceTree = "<group>"; };
 		DF02807851C05B94B75A188B /* Pods-Marvel Api Test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel Api Test.release.xcconfig"; path = "Pods/Target Support Files/Pods-Marvel Api Test/Pods-Marvel Api Test.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +212,7 @@
 		35C4EDFB21CB2B2D0083B3B8 /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				35C4EE0121CC512E0083B3B8 /* WorkItemsListTableViewCell */,
 				35C4EDFC21CB2B2D0083B3B8 /* CharacterListTableViewCell */,
 			);
 			path = UITableViewCell;
@@ -220,6 +225,15 @@
 				35C4EDFE21CB2B2D0083B3B8 /* CharactersListTableViewCell.swift */,
 			);
 			path = CharacterListTableViewCell;
+			sourceTree = "<group>";
+		};
+		35C4EE0121CC512E0083B3B8 /* WorkItemsListTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				35C4EE0621CC573F0083B3B8 /* WorkItemsListTableViewCell.swift */,
+				35C4EE0721CC573F0083B3B8 /* WorkItemsListTableViewCell.xib */,
+			);
+			path = WorkItemsListTableViewCell;
 			sourceTree = "<group>";
 		};
 		8F8F3A93A9E7BD2E919719B4 /* Pods */ = {
@@ -304,6 +318,7 @@
 				35A2159D21C7120C0082A942 /* Assets.xcassets in Resources */,
 				35C4EDFF21CB2B2D0083B3B8 /* CharactersListTableViewCell.xib in Resources */,
 				35A2159B21C712070082A942 /* Main.storyboard in Resources */,
+				35C4EE0921CC573F0083B3B8 /* WorkItemsListTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +406,7 @@
 				35C4EDF421CB24940083B3B8 /* NetworkManager.swift in Sources */,
 				35C4EDF221CB24940083B3B8 /* APIManager.swift in Sources */,
 				35C4EDD921CB23730083B3B8 /* Comic.swift in Sources */,
+				35C4EE0821CC573F0083B3B8 /* WorkItemsListTableViewCell.swift in Sources */,
 				35C4EDF321CB24940083B3B8 /* DataManager.swift in Sources */,
 				35C4EDE721CB24040083B3B8 /* BaseResponseObject.swift in Sources */,
 				35A2159621C712070082A942 /* CharactersListViewController.swift in Sources */,
