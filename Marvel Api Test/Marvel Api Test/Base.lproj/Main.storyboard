@@ -33,15 +33,34 @@
                     <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="82U-6h-6Ov">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="JEX-9P-axG" id="mIN-Zl-zDz"/>
+                                    <outlet property="delegate" destination="JEX-9P-axG" id="tkR-ox-3vG"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="82U-6h-6Ov" firstAttribute="leading" secondItem="VUw-jc-0yf" secondAttribute="leading" id="1FK-Cl-MXE"/>
+                            <constraint firstItem="82U-6h-6Ov" firstAttribute="top" secondItem="VUw-jc-0yf" secondAttribute="top" id="9QK-bg-rFS"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="bottom" secondItem="82U-6h-6Ov" secondAttribute="bottom" id="ULd-bX-ipm"/>
+                            <constraint firstItem="VUw-jc-0yf" firstAttribute="trailing" secondItem="82U-6h-6Ov" secondAttribute="trailing" id="tdq-2u-iBA"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VUw-jc-0yf"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
+                    <connections>
+                        <outlet property="workItemsTableView" destination="82U-6h-6Ov" id="dhB-pF-fb9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="709" y="129"/>
+            <point key="canvasLocation" x="708" y="128.18590704647679"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
