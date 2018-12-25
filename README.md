@@ -7,7 +7,8 @@ Marvel-API-Test is simple open souce iOS master detail app that consumes the mar
 
 To quick set up a working environment, clone the source then install CocoaPods libraries by navigating to porject's directory and run:
 
-```Pod install
+```
+Pod install
 ```
 
 ## Quick install
